@@ -5,9 +5,11 @@ function sortear(){
   let sorteados = [];
   let numeros;
   for(let i = 0; i < quantidade; i++){
-    numeros = obterNumeroAleatorio(de, ate)
-    sorteados.push(numeros)
+    numeros = obterNumeroAleatorio(de, ate);
+    sorteados.push(numeros);
   }
+  resultado = document.getElementById("resultado");
+  resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados:  ${sorteados}</label>`;
 }
 function obterNumeroAleatorio(min, max){
   return Math.floor(Math.random() * (max - min) + min);
