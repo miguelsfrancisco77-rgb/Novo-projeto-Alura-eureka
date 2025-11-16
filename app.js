@@ -14,31 +14,32 @@ function sortear() {
     }
     resultado = document.getElementById("resultado");
     resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados:  ${sorteados}</label>`;
-    botaoReiniciar()
+    botaoReiniciar();
 }
 function obterNumeroAleatorio(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
-function botaoReiniciar(){
-  let botao = document.getElementById("btn-reiniciar");
-  if(botao.classList.contains("container__botao-desabilitado")){
-    botao.classList.remove("container__botao-desabilitado");
-    botao.classList.add("container__botao");
-  } else{
-    botao.classList.add("container__botao-desabilitado");
-    botao.classList.remove("container__botao");
-  }
+function botaoReiniciar() {
+    let botao = document.getElementById("btn-reiniciar");
+    if (botao.classList.contains("container__botao-desabilitado")) {
+        botao.classList.remove("container__botao-desabilitado");
+        botao.classList.add("container__botao");
+    } else {
+        botao.classList.add("container__botao-desabilitado");
+        botao.classList.remove("container__botao");
+    }
 }
-function limparCampo(){
+function limparCampo() {
     quantidade = document.getElementById("quantidade");
-    quantidade.value = '';
+    quantidade.value = "";
     de = document.getElementById("de");
-    de.value = '';
-    ate =document.getElementById("ate");
-    ate.value = '';
+    de.value = "";
+    ate = document.getElementById("ate");
+    ate.value = "";
 }
-function reiniciar(){
-  limparCampo()
-  resultado = document.getElementById("resultado");
+function reiniciar() {
+    limparCampo();
+    resultado = document.getElementById("resultado");
     resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados:  nenhum ainda</label>`;
+    botaoReiniciar();
 }
