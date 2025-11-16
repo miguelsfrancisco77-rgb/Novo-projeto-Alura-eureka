@@ -4,6 +4,11 @@ function sortear() {
     let ate = parseInt(document.getElementById("ate").value);
     let sorteados = [];
     let numeros;
+    if(de > ate){
+      alert(`O valor no campo do "numero" não pode ser maior que "até o numero"`);
+      reiniciar();
+      limparCampo();
+    }
     for (let i = 0; i < quantidade; i++) {
         numeros = obterNumeroAleatorio(de, ate);
         if (sorteados.includes(numeros)) {
