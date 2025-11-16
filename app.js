@@ -14,7 +14,19 @@ function sortear() {
     }
     resultado = document.getElementById("resultado");
     resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados:  ${sorteados}</label>`;
+    botaoReiniciar()
+    
 }
 function obterNumeroAleatorio(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
+}
+function botaoReiniciar(){
+  let botao = document.getElementById("btn-reiniciar");
+  if(botao.classList.contains("container__botao-desabilitado")){
+    botao.classList.remove("container__botao-desabilitado");
+    botao.classList.add("container__botao");
+  } else{
+    botao.classList.add("container__botao-desabilitado");
+    botao.classList.remove("container__botao");
+  }
 }
