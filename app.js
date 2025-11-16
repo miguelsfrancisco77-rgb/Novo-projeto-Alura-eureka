@@ -4,10 +4,16 @@ function sortear() {
     let ate = parseInt(document.getElementById("ate").value);
     let sorteados = [];
     let numeros;
-    if(de > ate){
-      alert(`O valor no campo do "numero" não pode ser maior que "até o numero"`);
-      reiniciar();
-      limparCampo();
+    if (de > ate) {
+        alert(
+            `O valor no campo do "numero" não pode ser maior que "até o numero"`
+        );
+        if(quantidade > (de - ate + 1)){
+          alert("Por favor coloque o intervalo de numeros maior que quantidade de numerso sorteador!");
+          return;
+        }
+        reiniciar();
+        limparCampo();
     }
     for (let i = 0; i < quantidade; i++) {
         numeros = obterNumeroAleatorio(de, ate);
